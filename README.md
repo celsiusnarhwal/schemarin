@@ -104,7 +104,7 @@ A: That's...pretty self-explanatory.
 See [Apple's documentation on changing file, folder, and disk permissions](https://support.apple.com/guide/mac-help/change-permissions-for-files-folders-or-disks-mchlp1203/mac).
 Running Schemarin with `sudo` may solve the problem.
 
-### Q: I told Schemarin to scan a directory for color schemes, and it came back telling the directory was protected by macOS. What gives?
+### Q: I told Schemarin to scan a directory for color schemes, and it came back telling me the directory was protected by macOS. What gives?
 
 A: Uh-oh. See [Schemarin and SIP](schemarin-and-sip.md).
 
