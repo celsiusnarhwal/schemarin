@@ -113,5 +113,5 @@ schemarin
 [^1]: Previewing color schemes strictly requires that Schemarin is running in iTerm2.
 
 [^2]: It's strongly recommended that you install Poetry via the official installer, as this document directs you to,
-and not via Homebrew (or god forbid, pip). If you don't like piping to a shell, you are absolutely free to download,
+and not via Homebrew (or, god forbid, pip). If you don't like piping to a shell, you are absolutely free to download,
 examine, and manually run the installation script yourself.
