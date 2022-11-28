@@ -79,7 +79,7 @@ with **[SHAMELESS PLUG]** [loctocat](https://github.com/celsiusnarhwal/loctocat)
 the GitHub API. If you use Schemarin's default authentication method, GitHub will automatically grant it the necessary
 permissions on your account. Schemarin also provides the option of authenticating with
 a [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token),
-but you will have to make sure the token you create has access the the repositories you wish for Schemarin to access.
+but you will have to make sure the token you create has access to the appropriate repositories.
 
 ### Q: Can it access private repositories on other Git hosts, like GitLab or BitBucket?
 
