@@ -176,7 +176,7 @@ def preview_schemes():
             ansi_id = int(re.search(r"\d+", attr_name).group())
             attr_code = ["black", "red", "green", "yellow", "blue", "magenta", "cyan", "white",
                          "br_black", "br_red", "br_green", "br_yellow", "br_blue", "br_magenta",
-                         "br_cyan", "br_white"][int(ansi_id)]
+                         "br_cyan", "br_white"][ansi_id]
         else:
             attr_code = {
                 "Foreground Color": "fg",
