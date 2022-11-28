@@ -98,13 +98,13 @@ to implement this kind of functionality, but it is ridiculously difficult to mak
 default handler for certain file extensions on macOS, and it is only marginally less difficult for users to change
 that setting themselves. Maybe one day.
 
-### Q: I told Schemarin to scan a directory for color schemes, and it came back telling me I didn't have permission to access it. What gives?
+### Q: I told Schemarin to scan a directory for color schemes and it came back telling me I didn't have permission to access it. What gives?
 
 A: That's...pretty self-explanatory. 
 See [Apple's documentation on changing file, folder, and disk permissions](https://support.apple.com/guide/mac-help/change-permissions-for-files-folders-or-disks-mchlp1203/mac).
 Running Schemarin with `sudo` may solve the problem.
 
-### Q: I told Schemarin to scan a directory for color schemes, and it came back telling me the directory was protected by macOS. What gives?
+### Q: I told Schemarin to scan a directory for color schemes and it came back telling me the directory was protected by macOS. What gives?
 
 A: Uh-oh. See [Schemarin and SIP](schemarin-and-sip.md).
 
