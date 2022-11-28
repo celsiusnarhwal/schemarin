@@ -11,7 +11,7 @@ Schemarin uses [Poetry](https://python-poetry.org) for dependency management. Po
 to install Schemarin's dependencies and to build its wheel and tarball; Schemarin does not provide `requirements.txt` 
 or `setup.py` files.
 
-Schemarin, naturally, requires [iTerm2](https://iterm2.com). You don't strictly have to run Schemarin from iTerm2, and
+Schemarin, naturally, requires [iTerm2](https://iterm2.com). You don't strictly have to run Schemarin *in* iTerm2, and
 it mostly[^1] runs just fine in other terminal emulators. Whether Schemarin believes iTerm2 is installed is dependent
 on whether it can find `~/Library/Preferences/com.googlecode.iterm2.plist`, the existence of which Schemarin checks for 
 at runtime, and will exit if it cannot ascertain. 
