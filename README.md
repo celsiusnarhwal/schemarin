@@ -61,7 +61,7 @@ to quickly add a color scheme and then see what it looks like[^2] — without ne
 
 ### Q: I previewed a color scheme and it worked just fine (great feature btw) but now I can't get my terminal's original colors back!
 
-A: Color scheme preview are applied to the current terminal session only. You can get back your original colors by
+A: Color scheme previews are applied to the current terminal session only. You can get back your original colors by
 simply opening a new terminal tab or window.
 
 ### Q: What do you mean "there are no color schemes here that you don't already have"?
