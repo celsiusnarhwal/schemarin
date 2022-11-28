@@ -125,7 +125,7 @@ Schemarin would obviously not be possible without the wonderful work of George N
 
 Schemarin is licensed under the [MIT License](LICENSE.md).
 
-[^1]: If you enter a repository that appears to be private[^4], Schemarin ask you to to sign in to GitHub and will
+[^1]: If you enter a repository that appears to be private[^4], Schemarin will ask you to to sign in to GitHub and will
 attempt
 to access the repository using your credentials. Schemarin discards your credentials once it no longer needs them,
 and does not store them in any manner that would persist when Schemarin is not running.
