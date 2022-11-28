@@ -106,7 +106,7 @@ Running Schemarin with `sudo` may solve the problem.
 
 ### Q: I told Schemarin to scan a directory for color schemes and it came back telling me the directory was protected by macOS. What gives?
 
-A: Uh-oh. See [Schemarin and SIP](schemarin-and-sip.md).
+A: Uh-oh. See [Schemarin and System Integrity Protection](schemarin-and-sip.md).
 
 ## Acknowledgements
 
