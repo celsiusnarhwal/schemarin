@@ -61,7 +61,7 @@ to quickly add a color scheme and then see what it looks like[^2] — without ne
 
 ### Q: I previewed a color scheme and it worked just fine (great feature btw) but now I can't get my terminal's original colors back!
 
-A: Color scheme preview are applied to the current terminal session only. You can get back your original colors by
+A: Color scheme previews are applied to the current terminal session only. You can get back your original colors by
 simply opening a new terminal tab or window.
 
 ### Q: What do you mean "there are no color schemes here that you don't already have"?
@@ -79,7 +79,7 @@ with **[SHAMELESS PLUG]** [loctocat](https://github.com/celsiusnarhwal/loctocat)
 the GitHub API. If you use Schemarin's default authentication method, GitHub will automatically grant it the necessary
 permissions on your account. Schemarin also provides the option of authenticating with
 a [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token),
-but you will have to make sure the token you create has access the the repositories you wish for Schemarin to access.
+but you will have to make sure the token you create has access to the appropriate repositories.
 
 ### Q: Can it access private repositories on other Git hosts, like GitLab or BitBucket?
 
@@ -98,13 +98,13 @@ to implement this kind of functionality, but it is ridiculously difficult to mak
 default handler for certain file extensions on macOS, and it is only marginally less difficult for users to change
 that setting themselves. Maybe one day.
 
-### Q: I told Schemarin to scan a directory for color schemes, and it came back telling me I didn't have permission to access it. What gives?
+### Q: I told Schemarin to scan a directory for color schemes and it came back telling me I didn't have permission to access it. What gives?
 
 A: That's...pretty self-explanatory. 
 See [Apple's documentation on changing file, folder, and disk permissions](https://support.apple.com/guide/mac-help/change-permissions-for-files-folders-or-disks-mchlp1203/mac).
 Running Schemarin with `sudo` may solve the problem.
 
-### Q: I told Schemarin to scan a directory for color schemes, and it came back telling the directory was protected by macOS. What does that means?
+### Q: I told Schemarin to scan a directory for color schemes and it came back telling me the directory was protected by macOS. What gives?
 
 A: Uh-oh. See [Schemarin and SIP](schemarin-and-sip.md).
 
@@ -125,7 +125,7 @@ Schemarin would obviously not be possible without the wonderful work of George N
 
 Schemarin is licensed under the [MIT License](LICENSE.md).
 
-[^1]: If you enter a repository that appears to be private[^4], Schemarin ask you to to sign in to GitHub and will
+[^1]: If you enter a repository that appears to be private[^4], Schemarin will ask you to to sign in to GitHub and will
 attempt
 to access the repository using your credentials. Schemarin discards your credentials once it no longer needs them,
 and does not store them in any manner that would persist when Schemarin is not running.
