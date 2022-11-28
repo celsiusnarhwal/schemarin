@@ -81,7 +81,7 @@ permissions on your account. Schemarin also provides the option of authenticatin
 a [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token),
 but you will have to make sure the token you create has access to the appropriate repositories.
 
-### Q: Can it access private repositories on other Git hosts, like GitLab or BitBucket?
+### Q: Can it access private repositories on other Git hosts, like GitLab or Bitbucket?
 
 A: No. It can't access public repositories on other hosts, either. Schemarin's Git-powered features only work
 with GitHub.
