@@ -92,7 +92,7 @@ invoke build-formula Schemarin
 invoke hbf Schemarin
 ```
 
-The task willl use [homebrew-pypi-poet](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/tools/preview.rb)
+The task will use [homebrew-pypi-poet](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/tools/preview.rb)
 to generate a formula and, by default, write that formula to `houkago-tea-tap/schemarin.rb`, where `houkago-tea-tap`
 is a Git submodule linked to its [namesake repository](https://github.com/celsiusnarhwal/homebrew-htt). You may
 need to modify the task code to suit your environment.
