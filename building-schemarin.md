@@ -1,7 +1,7 @@
 # Building Schemarin
 
 If you're interested in building Schemarin from source, you've come to the right place. If you're a normal person,
-install Schemarin with the instructions in the [README](README.md#installation).
+install Schemarin with the [instructions in the README](README.md#installation).
 
 Schemarin is written in Python, so you must have Python installed to build it. Schemarin only warrants compatibility
 with CPython 3.10 and later (other Python implementations are not tested). You are advised to install Python from its
