@@ -69,10 +69,9 @@ development environment.
 poetry build
 ```
 
-Build options are specified in `pyproject.toml` and automatically picked up by `poetry build`. You should probably
-not change them.
+Build options are specified in `pyproject.toml` and automatically picked up by `poetry build`.
 
-Once built, you can install either wheel or tarball with the Python package manager of your choice.
+Once built, you can install either the wheel or tarball with the Python package manager of your choice.
 
 
 ### For Homebrew
