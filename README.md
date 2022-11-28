@@ -1,7 +1,7 @@
 # Schemarin
 
 Schemarin (skˈiːmɚɹˌɪn) is a color scheme manager for [iTerm2](https://iterm2.com/). Schemarin makes it easy to add
-and remove color schemes, export them to share with others, or even preview them in your terminal.
+and remove color schemes, export them to share with others, and even preview them in your terminal.
 
 ## Installation
 
