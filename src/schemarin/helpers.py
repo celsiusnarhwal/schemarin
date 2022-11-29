@@ -9,7 +9,7 @@ import pyperclip
 import toml
 from InquirerPy.base import Choice
 from github import Github as GitHub
-from github.GithubException import BadCredentialsException, UnknownObjectException
+from github.GithubException import BadCredentialsException
 from halo import Halo
 from loctocat import GitHubAuthenticator
 from loctocat import Handler
@@ -61,9 +61,9 @@ def get_scheme_settings():
     return get_it2_prefs()["Custom Color Presets"]
 
 
-def save_scheme_settings(new_prefs: dict):
+def save_scheme_settings(settings: dict):
     prefs = get_it2_prefs()
-    prefs["Custom Color Presets"] = new_prefs
+    prefs["Custom Color Presets"] = settings
     plistlib.dump(prefs, IT2_PREFS_PATH.open("wb"))
 
 
@@ -121,7 +121,7 @@ def sign_in_to_github():
         Choice(name="I did it", value="done"),
         Choice(name="Copy code to clipboard", value="copy"),
         Choice(name="Open URL in browser", value="open"),
-        Choice(name="I'd rather log in with a token (advanced users only)", value="token"),
+        Choice(name="I'd rather log in with a token", value="token"),
         Choice(name="Go back", value="redo"),
     ]
 
@@ -142,34 +142,19 @@ def sign_in_to_github():
 
 
 def sign_in_to_github_with_token():
-    class UsernameValidator(Validator):
-        def validate(self, document: Document) -> None:
-            if not document.text:
-                raise ValidationError(message="You must enter a username.")
-            else:
-                try:
-                    GitHub().get_user(document.text)
-                except UnknownObjectException:
-                    raise ValidationError(message="Invalid username.")
-
     class TokenValidator(Validator):
         def validate(self, document: Document) -> None:
             try:
-                login = GitHub(document.text).get_user().login
+                # noinspection PyStatementEffect
+                GitHub(document.text).get_user().login
             except BadCredentialsException:
                 raise ValidationError(message="Invalid token.")
-            else:
-                if login != username:
-                    raise ValidationError(message=f"That token doesn't belong to {username}.")
-
-    username = prompts.text(
-        message="Enter your GitHub username.",
-        validate=UsernameValidator()
-    ).execute()
 
     token = prompts.secret(
         message="Enter a personal access token with appropriate permissions.",
+        long_instruction="Need help? https://token.schemarin.celsiusnarhwal.dev",
         validate=TokenValidator(),
+        transformer=lambda result: f"Signed in as {GitHub(result).get_user().login}"
     ).execute()
 
     return token
