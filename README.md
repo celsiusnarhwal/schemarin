@@ -1,7 +1,7 @@
 # Schemarin
 
 Schemarin (skˈiːmɚɹˌɪn) is a color scheme manager for [iTerm2](https://iterm2.com/). Schemarin makes it easy to add
-and remove color schemes, export them to share with others, or even preview them in your terminal.
+and remove color schemes, export them to share with others, and even preview them in your terminal.
 
 ## Installation
 
@@ -81,7 +81,7 @@ permissions on your account. Schemarin also provides the option of authenticatin
 a [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token),
 but you will have to make sure the token you create has access to the appropriate repositories.
 
-### Q: Can it access private repositories on other Git hosts, like GitLab or BitBucket?
+### Q: Can it access private repositories on other Git hosts, like GitLab or Bitbucket?
 
 A: No. It can't access public repositories on other hosts, either. Schemarin's Git-powered features only work
 with GitHub.
@@ -106,7 +106,7 @@ Running Schemarin with `sudo` may solve the problem.
 
 ### Q: I told Schemarin to scan a directory for color schemes and it came back telling me the directory was protected by macOS. What gives?
 
-A: Uh-oh. See [Schemarin and SIP](schemarin-and-sip.md).
+A: Uh-oh. See [Schemarin and System Integrity Protection](schemarin-and-sip.md).
 
 ## Acknowledgements
 

@@ -69,10 +69,9 @@ development environment.
 poetry build
 ```
 
-Build options are specified in `pyproject.toml` and automatically picked up by `poetry build`. You should probably
-not change them.
+Build options are specified in [pyproject.toml](pyproject.toml) and automatically picked up by `poetry build`.
 
-Once built, you can install either wheel or tarball with the Python package manager of your choice.
+Once built, you can install either the wheel or tarball with the Python package manager of your choice.
 
 
 ### For Homebrew
@@ -93,14 +92,14 @@ invoke hbf Schemarin
 ```
 
 The task will use [homebrew-pypi-poet](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/tools/preview.rb)
-to generate a formula and, by default, write that formula to `houkago-tea-tap/schemarin.rb`, where `houkago-tea-tap`
+to generate a formula and, by default, write that formula to `houkago-tea-tap/Formula/schemarin.rb`, where `houkago-tea-tap`
 is a Git submodule linked to its [namesake repository](https://github.com/celsiusnarhwal/homebrew-htt). You may
 need to modify the task code to suit your environment.
 
 You can install the generated formula directly:
 
 ```bash
-brew install --formula houkago-tea-tap/schemarin.rb
+brew install --formula houkago-tea-tap/Formula/schemarin.rb
 ```
 
 ---
