@@ -113,28 +113,27 @@ def add_from_files():
     ).execute()
 
     if path.isfile():
-        tmpdir = tempfile.mkdtemp()
-        path = Path(path.copy(tmpdir))
-
-    add(path)
+        with tempfile.TemporaryDirectory() as tmpdir:
+            td_path = Path(tmpdir)
+            path.copy(td_path)
+            add(td_path)
+    else:
+        add(path)
 
 
 def add(path: Path):
-    with Halo(text="Loading color schemes...", spinner="dots") as spinner:
-        if path.isfile():
-            colorfiles = [path]
+    with Halo(text="Looking for color schemes...", spinner="dots") as spinner:
+        try:
+            colorfiles = {p.realpath(): plistlib.load(p.open("rb")) for p in path.walk("*.itermcolors")}
+        except PermissionError as e:
+            helpers.resolve_permission_error(path, e, spinner)
+            raise KeyboardInterrupt
         else:
-            try:
-                colorfiles = {p.realpath(): plistlib.load(p.open("rb")) for p in path.walk("*.itermcolors")}
-            except PermissionError as e:
-                helpers.resolve_permission_error(path, e, spinner)
-                raise KeyboardInterrupt
-            else:
-                existing = helpers.get_scheme_settings()
-                deque(maxlen=0).extend(
-                    colorfiles.pop(p.realpath(), None)
-                    for key in existing.keys() for p in path.walk(f"{key}.itermcolors")
-                )
+            existing = helpers.get_scheme_settings()
+            deque(maxlen=0).extend(
+                colorfiles.pop(p.realpath(), None)
+                for key in existing.keys() for p in path.walk(f"{key}.itermcolors")
+            )
 
         if not colorfiles:
             if path == helpers.get_builtin_schemes_dir():
