@@ -11,4 +11,4 @@ brew install schemarin
 Schemarin is published on PyPI **for technical reasons only** and is not intended to be installed with pip or other
 Python package managers.
 
-For more information, [check out Schemarin's GitHub repository.](https://schemarin.celsiusnarhwal.dev).
+For more information, [check out Schemarin's GitHub repository](https://schemarin.celsiusnarhwal.dev).
