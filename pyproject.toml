@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "schemarin"
-version = "0.0.7"
+version = "0.0.8"
 description = "A color scheme manager for iTerm2"
 authors = ["celsius narhwal <hello@celsiusnarhwal.dev>"]
 homepage = "https://schemarin.celsiusnarhwal.dev"
