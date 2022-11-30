@@ -71,4 +71,5 @@ jobs:
           git add Formula/schemarin.rb
           git commit -m "Update formula for Schemarin https://github.com/celsiusnarhwal/schemarin"
           git push
-          
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
