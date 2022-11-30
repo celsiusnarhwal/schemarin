@@ -63,13 +63,13 @@ jobs:
           path: .
 
       - name: Push to Houkago Tea Tap
-        run: |
-          git config --global user.name "celsius narhwal" && git config --global user.email "hello@celsiusnarhwal.dev"
-          git clone https://${{ secrets.GITHUB_TOKEN }}@github.com/celsius-narhwal/homebrew-htt
-          mv schemarin.rb homebrew-htt/Formula
-          cd homebrew-htt
-          git add Formula/schemarin.rb
-          git commit -m "Update formula for Schemarin https://github.com/celsiusnarhwal/schemarin"
-          git push
+        uses: dmnemec/copy_file_to_another_repo_action@main
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          API_TOKEN_GITHUB: ${{ secrets.HTT_TOKEN }}
+        with:
+            source_file: schemarin.rb
+            destination_repo: celsiusnarhwal/homebrew-htt
+            destination_file: Formula/schemarin.rb
+            commit_message: "Update formula for Schemarin https://github.com/celsiusnarhwal/schemarin"
+            user_name: celsiusnarhwal
+            user_email: hello@celsiusnarhwal.dev
