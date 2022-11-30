@@ -51,7 +51,7 @@ jobs:
           path: schemarin.rb
 
   publish-formula:
-    name: Publish Formula
+    name: Publish Homebrew Formula
     runs-on: ubuntu-latest
     needs: build-formula
 
@@ -64,7 +64,7 @@ jobs:
 
       - name: Push to Houkago Tea Tap
         run: |
-          git config --global user.name "celsius narhwal" && git config --global user.email "
+          git config --global user.name "celsius narhwal" && git config --global user.email "hello@celsiusnarhwal.dev"
           gh repo clone celsiusnarhwal/homebrew-htt
           mv schemarin.rb homebrew-htt/Formula
           cd homebrew-htt
