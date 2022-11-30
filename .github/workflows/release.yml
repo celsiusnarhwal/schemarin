@@ -13,6 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         name: Checkout Repository
+        with:
+          submodules: recursive
 
       - uses: actions/setup-python@v2
         name: Set Up Python
@@ -37,8 +39,6 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
-        with:
-          submodules: recursive
 
       - name: Set Up Python
         uses: actions/setup-python@v2
