@@ -37,10 +37,6 @@ Once you've installed Poetry, you can clone Schemarin to your local machine:
 
 ```bash
 git clone https://github.com/celsiusnarhwal/schemarin
-
-# or with the GitHub CLI
-
-gh repo clone celsiusnarhwal/schemarin
 ```
 
 And install its dependencies:
@@ -62,44 +58,38 @@ poetry run python3 src/schemarin/schemarin.py
 
 ### For Python
 
-`poetry build` will build Schemarin's wheel and tarball, placing them in the `dist` directory of the root of your
-development environment.
+`poetry build` will build Schemarin's wheel and tarball, placing them in the `dist` directory of Schemarin's root.
 
 ```bash
 poetry build
 ```
 
-Build options are specified in [pyproject.toml](pyproject.toml) and automatically picked up by `poetry build`.
+Build options are specified in [pyproject.toml](https://schemarin.celsiusnarhwal.dev/blob/HEAD/pyproject.toml) and automatically picked up by `poetry build`.
 
 Once built, you can install either the wheel or tarball with the Python package manager of your choice.
 
-
 ### For Homebrew
 
-Schemarin includes an [Invoke](https://www.pyinvoke.org) task in [tasks.py](tasks.py) that automates the process of 
-building its Homebrew formula. Invoke is a development dependency of Schemarin, and should have been installed
+Schemarin's Homebrew formula is built with [laureate](https://github.com/celsiusnarhwal/laureate). 
+laureate is a development dependency of Schemarin, and should have been installed
 automatically when you ran `poetry install`. If you, for some reason, ran `poetry install` with the `--without dev`
-or `--no-dev` options, Invoke was not installed, and you will need to install it yourself.
+or `--no-dev` options, laureate was not installed, and you will need to install it yourself.
 
-Running the task is simple:
+Building the formula is simple:
 
 ```bash
-invoke build-formula Schemarin
+# Make sure you're in Schemarin's root directory.
 
-# or using the task's alias
-
-invoke hbf Schemarin
+laureate
 ```
 
-The task will use [homebrew-pypi-poet](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/tools/preview.rb)
-to generate a formula and, by default, write that formula to `houkago-tea-tap/Formula/schemarin.rb`, where `houkago-tea-tap`
-is a Git submodule linked to its [namesake repository](https://github.com/celsiusnarhwal/homebrew-htt). You may
-need to modify the task code to suit your environment.
+laureate will write the generated formula to the current working directory as `[name].rb`, where name is the value
+of `tool.poetry.name` in Schemarin's `pyproject.toml`.
 
 You can install the generated formula directly:
 
 ```bash
-brew install --formula houkago-tea-tap/Formula/schemarin.rb
+brew install --formula schemarin.rb
 ```
 
 ---
@@ -107,6 +97,17 @@ Once you've built and installed Schemarin, you can run it from the command line 
 
 ```bash
 schemarin
+```
+
+## Using GitHub Actions
+
+In production, [GitHub Actions](https://schemarin.celsiusnarhwal.dev/blob/HEAD/.github/workflows) automate the process of 
+building and publishing Schemarin's Python and Homebrew distributions to PyPI and the 
+[Houkago Tea Tap](https://github.com/celsiusnarhwal/homebrew-htt), respectively. To run these workflows locally, 
+you can use [act](https://github.com/nektos/act).
+
+```bash
+brew install act
 ```
 
 [^1]: Previewing color schemes strictly requires that Schemarin is running in iTerm2.
