@@ -65,7 +65,7 @@ jobs:
       - name: Push to Houkago Tea Tap
         run: |
           git config --global user.name "celsius narhwal" && git config --global user.email "hello@celsiusnarhwal.dev"
-          gh repo clone celsiusnarhwal/homebrew-htt
+          git clone https://${{ secrets.GITHUB_TOKEN }}@github.com/celsius-narhwal/homebrew-htt
           mv schemarin.rb homebrew-htt/Formula
           cd homebrew-htt
           git add Formula/schemarin.rb
