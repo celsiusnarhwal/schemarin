@@ -42,7 +42,9 @@ jobs:
         uses: actions/setup-python@v2
 
       - name: Build Formula
-        run: pip install laureate && laureate
+        run: |
+          pip install laureate && laureate
+          echo -e "# Homebrew formula for Schemarin. https://github.com/celsiusnarhwal/schemarin\n\n$(cat schemarin.rb)" > schemarin.rb
 
       - name: Upload Formula
         uses: actions/upload-artifact@v3
@@ -67,9 +69,9 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.HTT_TOKEN }}
         with:
-            source_file: schemarin.rb
-            destination_repo: celsiusnarhwal/homebrew-htt
-            destination_file: Formula/schemarin.rb
-            commit_message: "Update formula for Schemarin https://github.com/celsiusnarhwal/schemarin"
-            user_name: celsiusnarhwal
-            user_email: hello@celsiusnarhwal.dev
+          source_file: schemarin.rb
+          destination_repo: celsiusnarhwal/homebrew-htt
+          destination_folder: Formula
+          commit_message: "Update formula for Schemarin https://github.com/celsiusnarhwal/schemarin"
+          user_name: celsiusnarhwal
+          user_email: hello@celsiusnarhwal.dev
