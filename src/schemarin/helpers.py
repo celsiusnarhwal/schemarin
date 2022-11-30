@@ -34,7 +34,7 @@ def preflight():
     passing = True
 
     if sys.platform != "darwin":
-        click.echo(make_error_text("Schemarin onluy works on macOS. Sorry!"))
+        click.echo(make_error_text("Schemarin only works on macOS. Sorry!"))
         passing = False
     elif not IT2_PREFS_PATH.exists():
         click.echo(make_error_text("schemarin couldn't find iTerm2's preferences file. "
@@ -176,7 +176,7 @@ def resolve_permission_error(path: Path, exception: PermissionError, spinner: Ha
 
         spinner.fail(msg)
 
-        info = "Learn more: https://github.com/celsiusnarhwal/schemarin/schemarin-and-sip.md"
+        info = "Learn more: https://schemarin.celsiusnarhwal.dev/blob/HEAD/schemarin-and-sip.md"
         click.echo(make_info_text(info))
     else:
         macos_version = platform.mac_ver()[0].split(".")

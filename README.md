@@ -13,7 +13,7 @@ brew tap celsiusnarhwal/htt
 brew install schemarin
 ```
 
-You can also build Schemarin from source, if that's your thing. See [Building Schemarin](building-schemarin.md).
+You can also build Schemarin from source, if that's your thing. See [Building Schemarin](https://schemarin.celsiusnarhwal.dev/blob/HEAD/building-schemarin.md).
 
 ## Features
 
@@ -58,6 +58,16 @@ to quickly add a color scheme and then see what it looks like[^2] — without ne
 </p>
 
 ## FAQ
+
+### Q: I can't install Schemarin, help!
+
+A: You may need to install libgit2 with Homebrew.
+
+```bash
+brew install libgit2
+```
+
+If you're still having trouble, [open an issue](https://schemarin.celsiusnarhwal.dev/issues/new)
 
 ### Q: I previewed a color scheme and it worked just fine (great feature btw) but now I can't get my terminal's original colors back!
 
@@ -106,7 +116,7 @@ Running Schemarin with `sudo` may solve the problem.
 
 ### Q: I told Schemarin to scan a directory for color schemes and it came back telling me the directory was protected by macOS. What gives?
 
-A: Uh-oh. See [Schemarin and System Integrity Protection](schemarin-and-sip.md).
+A: Uh-oh. See [Schemarin and System Integrity Protection](https://schemarin.celsiusnarhwal.dev/blob/HEAD/schemarin-and-sip.md).
 
 ## Acknowledgements
 
@@ -123,7 +133,7 @@ Schemarin would obviously not be possible without the wonderful work of George N
 
 ## License
 
-Schemarin is licensed under the [MIT License](LICENSE.md).
+Schemarin is licensed under the [MIT License](https://schemarin.celsiusnarhwal.dev/blob/HEAD/LICENSE.md).
 
 [^1]: If you enter a repository that appears to be private[^4], Schemarin will ask you to to sign in to GitHub and will
 attempt

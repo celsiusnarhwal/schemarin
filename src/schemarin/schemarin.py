@@ -18,6 +18,7 @@ import helpers
 import importers
 import prompts
 
+
 inflect = ifl.engine()
 
 
@@ -191,8 +192,8 @@ def preview_schemes():
         red = attr_data["Red Component"]
         green = attr_data["Green Component"]
         blue = attr_data["Blue Component"]
-
         color_hex = Color(rgb=(red, green, blue)).hex.lstrip("#")
+
         return f"\033]1337;SetColors={attr_code}={color_hex}\033\\"
 
     if not Path("~/.iterm2/it2check").expand().exists():
@@ -203,7 +204,7 @@ def preview_schemes():
         raise KeyboardInterrupt
 
     if not subprocess.run("~/.iterm2/it2check", stdout=sys.stdout, shell=True).returncode == 0:
-        msg = "Please quit and relaunch Schemarin from within iTerm2."
+        msg = "Please quit Schemarin and relaunch it from within iTerm2."
         click.echo(helpers.make_error_text(msg))
         raise KeyboardInterrupt
 

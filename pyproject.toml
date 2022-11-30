@@ -1,8 +1,10 @@
 [tool.poetry]
 name = "schemarin"
-version = "0.1.0"
+version = "0.0.3"
 description = "A color scheme manager for iTerm2"
 authors = ["celsius narhwal <hello@celsiusnarhwal.dev>"]
+homepage = "https://schemarin.celsiusnarhwal.dev"
+repository = "https://github.com/celsiusnarhwal/schemarin"
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -16,7 +18,6 @@ pygit2 = "^1.11.1"
 validators = "^0.20.0"
 loctocat = "^1.0.2"
 pyperclip = "^1.8.2"
-frozendict = "^2.3.4"
 path = "^16.5.0"
 toml = "^0.10.2"
 colour = "^0.1.5"
@@ -24,6 +25,7 @@ colour = "^0.1.5"
 [tool.poetry.group.dev.dependencies]
 ptpython = "^3.0.20"
 ipython = "^8.6.0"
+laureate = "^2.0.0"
 
 [tool.poetry.scripts]
 schemarin = "schemarin.schemarin:cli"
