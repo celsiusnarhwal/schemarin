@@ -67,7 +67,7 @@ A: You may need to install libgit2 with Homebrew.
 brew install libgit2
 ```
 
-If you're still having trouble, [open an issue](https://schemarin.celsiusnarhwal.dev/issues/new)
+If you're still having trouble, [open an issue](https://schemarin.celsiusnarhwal.dev/issues/new).
 
 ### Q: I previewed a color scheme and it worked just fine (great feature btw) but now I can't get my terminal's original colors back!
 
