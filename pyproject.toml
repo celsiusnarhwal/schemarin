@@ -1,10 +1,12 @@
 [tool.poetry]
 name = "schemarin"
-version = "0.0.9"
+version = "1.0.0"
 description = "A color scheme manager for iTerm2"
 authors = ["celsius narhwal <hello@celsiusnarhwal.dev>"]
 homepage = "https://schemarin.celsiusnarhwal.dev"
 repository = "https://github.com/celsiusnarhwal/schemarin"
+readme = "pypi/README.md"
+license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.10"
