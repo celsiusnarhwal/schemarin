@@ -54,8 +54,47 @@ jobs:
           name: schemarin.rb
           path: schemarin.rb
 
-  publish-formula:
-    name: Publish Homebrew Formula
+  build-bottles:
+    name: Build Homebrew Bottles
+    runs-on: macos-latest
+    needs: build-formula
+
+    steps:
+      - name: Download Formula
+        uses: actions/download-artifact@v3
+        with:
+          name: schemarin.rb
+          path: .
+
+      - name: Checkout Houkago Tea Tap
+        uses: actions/checkout@v3
+        with:
+          repository: celsiusnarhwal/homebrew-htt
+          path: houkago-tea-tap
+
+      - name: Build Bottle
+        run: |
+          brew install --formula --build-bottle schemarin.rb
+          ./houkago-tea-tap/bottle.sh schemarin
+          cat /usr/local/Homebrew/Library/Taps/celsiusnarhwal/homebrew-htt/Formula/schemarin.rb > schemarin.rb
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload Formula
+        uses: actions/upload-artifact@v3
+        with:
+          name: schemarin.rb
+          path: schemarin.rb
+
+      - name: Upload Bottles
+        uses: actions/upload-artifact@v3
+        with:
+          name: schemarin.tar.gz
+          path: schemarin.tar.gz
+        
+
+  publish-homebrew:
+    name: Publish Homebrew Formula and Bottles
     runs-on: ubuntu-latest
     needs: build-formula
 
@@ -66,14 +105,37 @@ jobs:
           name: schemarin.rb
           path: .
 
-      - name: Push to Houkago Tea Tap
-        uses: dmnemec/copy_file_to_another_repo_action@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.HTT_TOKEN }}
+      - name: Download Bottles
+        uses: actions/download-artifact@v3
         with:
-          source_file: schemarin.rb
-          destination_repo: celsiusnarhwal/homebrew-htt
-          destination_folder: Formula
-          commit_message: "Update formula for Schemarin https://github.com/celsiusnarhwal/schemarin"
-          user_name: celsiusnarhwal
-          user_email: hello@celsiusnarhwal.dev
+          name: schemarin.tar.gz
+          path: .
+
+      - name: Set Git User Metadata
+        run: |
+          git config --global user.name "celsiusnarhwal"
+          git config --global user.email "hello@celsiusnarhwal.dev"
+
+      - name: Checkout Houkago Tea Tap
+        uses: actions/checkout@v3
+        with:
+          repository: celsiusnarhwal/homebrew-htt
+          path: houkago-tea-tap
+          token: ${{ secrets.HTT_TOKEN }}
+
+      - name: Publish Formula
+        run: |
+          mv schemarin.rb houkago-tea-tap/Formula/schemarin.rb
+          cd houkago-tea-tap
+          git add Formula/schemarin.rb
+          git commit -m "Update formula for Schemarin https://github.com/celsiusnarhwal/schemarin"
+          git push
+
+      - name: Publish Bottle
+        run: |
+          mv schemarin.tar.gz houkago-tea-tap/Bottles/schemarin.tar.gz
+          cd houkago-tea-tap/Bottles
+          git lfs track schemarin.tar.gz
+          git add schemarin.tar.gz .gitattributes
+          git commit -m "Update bottle for Schemarin https://github.com/celsiusnarhwal/schemarin"
+          git push
